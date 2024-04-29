@@ -30,10 +30,10 @@ public class FlyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
+        //if (isDashing)
+        //{
+        //    return;
+        //}
         if (Input.GetMouseButtonDown(0))
         {
             InitPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -62,7 +62,7 @@ public class FlyMovement : MonoBehaviour
 
     IEnumerator DashAttack()
     {
-        isDashing = true;
+      //  isDashing = true;
         while (Vector2.Distance(transform.position, InitPos) > 0.5f)
         {
             //FlyPrefab.GetComponent<Rigidbody2D>().velocity = dir.normalized * dashPower * Time.deltaTime;
@@ -71,7 +71,7 @@ public class FlyMovement : MonoBehaviour
 
         }
 
-        isDashing = false;
+     //   isDashing = false;
         // StartCoroutine(BackToOrig());
     }
 

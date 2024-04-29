@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\PosionScript.cs" />
+    <Compile Include="Assets\Scripts\DrgonFly.cs" />
+    <Compile Include="Assets\Scripts\waspAttack.cs" />
     <Compile Include="Assets\Scripts\FlyAttack.cs" />
     <Compile Include="Assets\Scripts\FlyMovement.cs" />
     <Compile Include="Assets\Scripts\NectorScript.cs" />
