@@ -381,6 +381,7 @@
 "Assets/Scripts/FlyAttack.cs"
 "Assets/Scripts/Flybehaviour.cs"
 "Assets/Scripts/FlyMovement.cs"
+"Assets/Scripts/Hopper.cs"
 "Assets/Scripts/MovingPlatform.cs"
 "Assets/Scripts/NectorScript.cs"
 "Assets/Scripts/PosionScript.cs"
