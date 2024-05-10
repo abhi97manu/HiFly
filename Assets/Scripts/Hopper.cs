@@ -54,7 +54,7 @@ public class Hopper : MonoBehaviour
         
         timer += 1f * Time.deltaTime;
             hop = new Vector3(-velocity * Mathf.Cos(45f * Mathf.Deg2Rad) * timer, (velocity * Mathf.Sin(45f * Mathf.Deg2Rad) * timer) - (0.5f * gravityAcc * timer * timer), 0);
-        Debug.Log(timer);
+       // Debug.Log(timer);
         this.transform.position = InitPos + hop;
         
     }

@@ -384,6 +384,7 @@
 "Assets/Scripts/Hopper.cs"
 "Assets/Scripts/MovingPlatform.cs"
 "Assets/Scripts/NectorScript.cs"
+"Assets/Scripts/NextSceneUpd.cs"
 "Assets/Scripts/PosionScript.cs"
 "Assets/Scripts/waspAttack.cs"
 -langversion:9.0

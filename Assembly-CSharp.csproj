@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\FlyAttack.cs" />
     <Compile Include="Assets\Scripts\FlyMovement.cs" />
     <Compile Include="Assets\Scripts\Hopper.cs" />
+    <Compile Include="Assets\Scripts\NextSceneUpd.cs" />
     <Compile Include="Assets\Scripts\NectorScript.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Flybehaviour.cs" />
