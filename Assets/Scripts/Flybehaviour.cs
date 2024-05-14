@@ -13,7 +13,7 @@ public class Flybehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        health = 30;
         
     }
 

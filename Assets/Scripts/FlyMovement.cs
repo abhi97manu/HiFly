@@ -10,6 +10,9 @@ public class FlyMovement : MonoBehaviour
     [SerializeField] float dashDuration;
 
 
+    public bool on_nector;
+
+
     private Vector3 InitPos;
     private Vector3 dir;
     private bool isDashing;
@@ -30,40 +33,49 @@ public class FlyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!on_nector)
+        {
+            movingForward();
+        }
         //if (isDashing)
         //{
         //    return;
         //}
+
+      //  this.transform.Translate(Vector3.right * 0.2f * Time.deltaTime);
         if (Input.GetMouseButtonDown(0))
         {
             InitPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             dir = new Vector3(InitPos.x, InitPos.y, 0f) - FlyPrefab.transform.position;
             if (FlyPrefab.transform.position.x < InitPos.x)
             {
-                this.gameObject.GetComponentInChildren<SpriteRenderer>().flipX = false ;
+              //  this.transform.eulerAngles = new Vector3(transform.rotation.x, 0f, transform.rotation.z); 
+               this.gameObject.GetComponentInChildren<SpriteRenderer>().flipX = false ;
                 flipped = false;
             }
             else
             {
-                this.gameObject.GetComponentInChildren<SpriteRenderer>().flipX = true;
+               //this.transform.eulerAngles = new Vector3(transform.rotation.x, -180f, transform.rotation.z);
+               this.gameObject.GetComponentInChildren<SpriteRenderer>().flipX = true;
                 flipped = true;
             }
             {
                 StartCoroutine(DashAttack());
+               
 
                 //FlyPrefab.transform.position += dir.normalized * dashPower * Time.deltaTime * Time.timeScale;
                 Debug.Log(InitPos);
             }
 
         }
-      
+       
 
     }
 
     IEnumerator DashAttack()
     {
       //  isDashing = true;
-        while (Vector2.Distance(transform.position, InitPos) > 0.5f)
+        while (Vector2.Distance(transform.position, InitPos) > 1f)
         {
             //FlyPrefab.GetComponent<Rigidbody2D>().velocity = dir.normalized * dashPower * Time.deltaTime;
             FlyPrefab.transform.Translate(dir.normalized * dashPower * Time.deltaTime);
@@ -75,4 +87,13 @@ public class FlyMovement : MonoBehaviour
         // StartCoroutine(BackToOrig());
     }
 
+    void movingForward()
+    {
+       if (flipped == false)
+        {this.transform.Translate(Vector3.right * 0.2f * Time.deltaTime); }
+
+        //yield return null;
+        else
+          transform.Translate(Vector3.left * 0.2f * Time.deltaTime);
+    }
 }

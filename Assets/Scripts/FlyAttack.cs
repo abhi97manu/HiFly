@@ -6,10 +6,15 @@ using UnityEngine;
 
 public class FlyAttack : MonoBehaviour
 {
+
+    
     [SerializeField] GameObject poisonPrefab;
+
    
+    GameObject poison;
     void Start()
     {
+        
         
     }
 
@@ -21,12 +26,15 @@ public class FlyAttack : MonoBehaviour
             {
             StingAttack();
         }
+
+       
     }
 
     public void StingAttack()
-    {
-        GameObject poison = Instantiate(poisonPrefab);
-        poison.transform.position = FindAnyObjectByType<Flybehaviour>().transform.position;
+    {   poison = Instantiate(poisonPrefab);
+        poison.transform.position = this.transform.position;
+        poison.transform.rotation = Quaternion.identity;
+       
     }
 
 }

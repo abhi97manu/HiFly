@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,7 +15,8 @@ public class NectorScript : MonoBehaviour
     float countDown = 0.0f;
     bool healthInc;
 
-    Flybehaviour flybehaviour;
+
+        Flybehaviour flybehaviour;
     void Start()
     {
         cam = Camera.main;
@@ -35,6 +37,7 @@ public class NectorScript : MonoBehaviour
            
          if (dist.magnitude < 1f)
             {
+               BeePlayer.GetComponent<FlyMovement>().on_nector = true;
                 BeePlayer.transform.parent = this.gameObject.transform;
 
                 countDown -= 1* Time.deltaTime;
@@ -42,9 +45,15 @@ public class NectorScript : MonoBehaviour
 
                 if (countDown <= 0)
                 {
-                    countDown = maxCount;
-                   
-                   
+                   // countDown = maxCount;
+                    this.GetComponent<ParticleSystem>().Stop();
+
+                }
+                else
+                {
+                    this.GetComponent<ParticleSystem>().Play();
+                    flybehaviour.health += 10*Time.deltaTime;
+
                 }
                 Debug.Log(countDown);
 
@@ -57,33 +66,22 @@ public class NectorScript : MonoBehaviour
                 //  Debug.Log("Maximum Count :" + (countDown - Time.time));
             }
 
+          
          
            
         }
 
-     
-          
-
-        
-
-
-
 
         else
         {
+            BeePlayer.GetComponent<FlyMovement>().on_nector = false;
             BeePlayer.transform.parent = null;
             healthInc = false;
-            if (BeePlayer.GetComponent<FlyMovement>().flipped == false)
-            { BeePlayer.transform.Translate(Vector3.right * 0.2f * Time.deltaTime); }
-            else 
-            BeePlayer.transform.Translate(Vector3.left * 0.2f * Time.deltaTime);
+            this.GetComponent<ParticleSystem>().Stop();
 
         }
 
-        if (healthInc)
-        {
-            flybehaviour.health++;
-        }
+       
     }
 
   
