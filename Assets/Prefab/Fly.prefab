@@ -157,6 +157,7 @@ MonoBehaviour:
   FlyPrefab: {fileID: 8356136065938109278}
   dashPower: 150
   dashDuration: 0.1
+  on_nector: 0
   steps: 0.2
   flipped: 0
 --- !u!114 &8240560830447271847
@@ -166,12 +167,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8356136065938109278}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9471eee92069a340a869540dc1e68c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poisonPrefab: {fileID: 0}
+  poisonPrefab: {fileID: 5418463740117571598, guid: f6e5984be8aac0948a36ada0d01db70a, type: 3}
+  Attackcount: 0
 --- !u!114 &9065401075352889970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poisonPrefab: {fileID: 5418463740117571598, guid: f6e5984be8aac0948a36ada0d01db70a, type: 3}
+  Attackcount: 0

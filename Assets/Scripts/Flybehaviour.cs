@@ -23,4 +23,14 @@ public class Flybehaviour : MonoBehaviour
         healthBar.value = health/100;
      
     }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Dfly")
+        {
+            health = health - 20;
+        }
+    }
 }
